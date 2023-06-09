@@ -5,7 +5,7 @@ $(document).ready(function() {
     // Check current time and color-code each timeblock based on past, present, and future
     var currentHour = moment().hour();
     $(".time-block").each(function() {
-      var blockHour = parseInt($(this).attr("id").split("-")[1]);
+      var blockHour = parseInt($(this).attr("id").substring($(this).attr(id).indexOf("-")+1));
   
       if (blockHour < currentHour) {
         $(this).addClass("past");
